@@ -5,7 +5,9 @@
 # Home page
 GET     /                           controllers.Application.index
 
+GET     /books                      controllers.Application.listBooks()
 GET     /readings                   controllers.Application.readings
+GET     /book/lookup/*isbn          controllers.Application.lookUpBook(isbn)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
