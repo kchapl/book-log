@@ -1,14 +1,3 @@
-//libraryDependencies ++= Seq(
-// // jdbc,
-// // cache,
-////  ws,
-////  "postgresql" % "postgresql" % "9.1-901.jdbc4"
-//)
-
-//routesGenerator := InjectedRoutesGenerator
-
-//lazy val root = (project in file(".")).enablePlugins(PlayScala)
-
 lazy val root = (project in file("."))
   .enablePlugins(PlayScala)
   .settings(
@@ -18,6 +7,7 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       ws,
       guice,
+      "org.scala-lang.modules" %% "scala-xml" % "2.1.0",
       "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
     ),
     scalacOptions ++= Seq(
