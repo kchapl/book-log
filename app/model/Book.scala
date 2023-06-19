@@ -10,10 +10,15 @@ case class Book(author: String, title: String)
 
 object Book {
 
-  def lookUp(isbn: String, ws: WSClient)(implicit ec: ExecutionContext): Future[Option[Book]] = {
+  def lookUp(isbn: String, ws: WSClient)(implicit
+      ec: ExecutionContext
+  ): Future[Option[Book]] = {
 
     //https://www.googleapis.com/books/v1/volumes?q=isbn:9781847082541
-    val eventualResponse = ws.url("https://www.googleapis.com/books/v1/volumes").withQueryString("q" -> s"isbn:$isbn").get()
+    val eventualResponse = ws
+      .url("https://www.googleapis.com/books/v1/volumes")
+      .withQueryStringParameters("q" -> s"isbn:$isbn")
+      .get()
     for (response <- eventualResponse) yield {
       val item = (response.json \ "items").head
       for {
