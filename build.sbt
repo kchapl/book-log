@@ -14,7 +14,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "book-log",
     version := "1.0-SNAPSHOT",
-    scalaVersion := "2.13.10",
+    scalaVersion := "2.13.11",
     libraryDependencies ++= Seq(
       ws,
       guice,
