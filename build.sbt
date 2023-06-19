@@ -3,12 +3,11 @@ lazy val root = (project in file("."))
   .settings(
     name := "book-log",
     version := "1.0-SNAPSHOT",
-    scalaVersion := "2.13.10",
+    scalaVersion := "2.13.11",
     libraryDependencies ++= Seq(
       ws,
       guice,
-      "org.scala-lang.modules" %% "scala-xml" % "2.1.0",
-      "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
+      "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
     ),
     scalacOptions ++= Seq(
       "-feature",
