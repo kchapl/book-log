@@ -14,7 +14,7 @@ object Book {
       ec: ExecutionContext
   ): Future[Option[Book]] = {
 
-    //https://www.googleapis.com/books/v1/volumes?q=isbn:9781847082541
+    // https://www.googleapis.com/books/v1/volumes?q=isbn:9781847082541
     val eventualResponse = ws
       .url("https://www.googleapis.com/books/v1/volumes")
       .withQueryStringParameters("q" -> s"isbn:$isbn")
