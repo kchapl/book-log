@@ -7,7 +7,10 @@ import play.api.mvc._
 import javax.inject.Inject
 import scala.concurrent.ExecutionContext.Implicits.global
 
-class Application @Inject()(controllerComponents: ControllerComponents,ws: WSClient) extends AbstractController(controllerComponents) {
+class Application @Inject() (
+    controllerComponents: ControllerComponents,
+    ws: WSClient
+) extends AbstractController(controllerComponents) {
 
   def index = Action {
     Ok(views.html.index("Your new application is ready."))
